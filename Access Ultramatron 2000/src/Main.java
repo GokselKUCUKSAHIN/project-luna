@@ -15,7 +15,10 @@ public class Main
 
     public static void main(String[] args) throws SQLException, FileNotFoundException
     {
-        executeSQL("Vatandas.txt", "Insan");
+        //initDatabase();
+        //showTable("TCVatandas");
+        //statement.executeQuery("insert into [Calisir] ([eczaciNo], [isyeriNo], [iseGirisTarih], [maas]) values (1, 2,'1998-08-08 12:45:30', '123,32');");
+        //executeSQL("Vatandas.txt", "Insan");
         //createInserHasta();
         //initDatabase();
         //executeSQL("dogum","Hasta");
@@ -88,7 +91,7 @@ public class Main
         return rows;
     }
 
-    private static void Vatandas()
+    private static void vatandas()
     {
         ArrayList<String> insert = new ArrayList<>();
         for (int i = 1; i <= 750; i++)
@@ -208,12 +211,25 @@ public class Main
         showTable(tableName);
     }
 
-    private static void AddBirthdate()
+    private static void addBirthdate()
     {
         for (int i = 1; i <= 751; i++)
         {
             String date = String.format("%04d-%02d-%02d 0:0:0", Rand.getInt(1940, 2005), Rand.getInt(1, 13), Rand.getInt(1, 28));
             System.out.printf("Update [Hasta] set [DogumTarih] = '%s' where [id] = %d;\n", date, i);
+        }
+    }
+
+    private static void commaSeperatedWorker()
+    {
+        int index = 1;
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                System.out.printf("%d;%d;%d;%4d-%02d-%02d 0:0:0;%d,%03d\n", index++, index + 103, j + 1, Utils.getRandomInt(2000, 2014),
+                        Utils.getRandomInt(1, 13), Utils.getRandomInt(1, 28), Utils.getRandomInt(4000, 8500), Utils.getRandomInt(0, 1000));
+            }
         }
     }
 
