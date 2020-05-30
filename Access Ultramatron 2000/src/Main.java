@@ -2,6 +2,8 @@ import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,30 +17,69 @@ public class Main
 
     public static void main(String[] args) throws SQLException, FileNotFoundException
     {
-        //initDatabase();
-        //showTable("TCVatandas");
-        //statement.executeQuery("insert into [Calisir] ([eczaciNo], [isyeriNo], [iseGirisTarih], [maas]) values (1, 2,'1998-08-08 12:45:30', '123,32');");
-        //executeSQL("Vatandas.txt", "Insan");
-        //createInserHasta();
-        //initDatabase();
-        //executeSQL("dogum","Hasta");
-        //AddBirthdate();
-        //Vatandas();
+
+        //commaSeperatedWorker();
+        //commaSeperatedEczaci();
+        //commaSeperatedDoctor();
+        //ilacFiyat();
     }
-    /*
-    * ArrayList<String> sqls = loadDataFromTxt("Sehir.sql");
-        for (String sql : sqls)
+
+    private static void writeToFile(String fileName, ArrayList<String> tableOfContext)
+    {
+        try
         {
-            System.out.println(sql);
-            try
+            File myObj = new File("outputText/" + fileName + ".txt");
+            if (myObj.createNewFile())
             {
-                //statement.executeUpdate(sql);
-            }
-            catch (Exception e)
+                System.out.println("Dosya: '" + myObj.getName() + "' ismiyle oluşturuldu.");
+                System.out.println("Yazma işlemi başlatılıyor.");
+                FileWriter fileWriter = new FileWriter("outputText/" + fileName + ".txt");
+                for (String row : tableOfContext)
+                {
+                    fileWriter.write(row + "\n");
+                }
+                fileWriter.close();
+            } else
             {
-                //
+                System.out.println(fileName + " isimli bir dosya zaten mevcut. İşlem durduruluyor.");
             }
-        }*/
+        }
+        catch (IOException e)
+        {
+            System.out.println("Bir şey oldu."); // :)
+            e.printStackTrace();
+        }
+    }
+
+    private static void ilacFiyat() throws FileNotFoundException
+    {
+        ArrayList<String> product = loadDataFromTxt("Urun");
+        for (int i = 0; i < product.size(); i++)
+        {
+            double rand = Utils.getRandom(1);
+            int price = 0;
+            int dec = Utils.getRandomInt(0, 100);
+            if (rand <= 0.05)
+            {
+                // high price
+                price = Utils.getRandomInt(75, 250);
+            } else if (rand > 0.05 && rand <= 0.15)
+            {
+                // mid price
+                price = Utils.getRandomInt(15, 75);
+            } else
+            {
+                //cheap
+                price = Utils.getRandomInt(2, 15);
+            }
+            product.set(i, product.get(i) + String.format(";%d,%02d", price, dec));
+        }
+
+        for (String str : product)
+        {
+            System.out.println(str);
+        }
+    }
 
     private static void showTable(String tableName) throws SQLException
     {
@@ -220,16 +261,15 @@ public class Main
         }
     }
 
-    private static void commaSeperatedWorker()
+    private static void shuffle(ArrayList<String> list)
     {
-        int index = 1;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < list.size(); i++)
         {
-            for (int j = 0; j < 10; j++)
-            {
-                System.out.printf("%d;%d;%d;%4d-%02d-%02d 0:0:0;%d,%03d\n", index++, index + 103, j + 1, Utils.getRandomInt(2000, 2014),
-                        Utils.getRandomInt(1, 13), Utils.getRandomInt(1, 28), Utils.getRandomInt(4000, 8500), Utils.getRandomInt(0, 1000));
-            }
+            int r1 = Utils.getRandomInt(list.size());
+            int r2 = Utils.getRandomInt(list.size());
+            String temp = list.get(r1);
+            list.set(r1, list.get(r2));
+            list.set(r2, temp);
         }
     }
 
@@ -279,4 +319,72 @@ public class Main
         tc += Integer.toString(sum % 10);
         return tc;
     }
+
+    private static void commaSeperatedEczaci()
+    {
+        ArrayList<Integer> distinct = new ArrayList<>();
+        ArrayList<String> array = new ArrayList<>();
+        //
+        for (int i = 0; i < 50; i++)
+        {
+            int diplomaNo = Utils.getRandomInt(100000, 999999);
+            int vatandasNo = -1;
+            do
+            {
+                vatandasNo = Utils.getRandomInt(1, 720);
+            } while (distinct.contains(vatandasNo));
+            distinct.add(vatandasNo);
+            //
+            array.add(String.format("%d;%6d", vatandasNo, diplomaNo));
+        }
+        shuffle(array);
+        for (int i = 0; i < 50; i++)
+        {
+            System.out.println((i + 1) + ";" + array.get(i));
+        }
+    }
+
+    private static void commaSeperatedWorker()
+    {
+        ArrayList<String> array = new ArrayList<>();
+        int index = 1;
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                array.add(String.format("%d;%d;%4d-%02d-%02d 0:0:0;%d,%03d", index++, j + 1, Utils.getRandomInt(2000, 2014),
+                        Utils.getRandomInt(1, 13), Utils.getRandomInt(1, 28), Utils.getRandomInt(4000, 8500), Utils.getRandomInt(0, 1000)));
+            }
+        }
+        shuffle(array);
+        for (int i = 0; i < array.size(); i++)
+        {
+            System.out.println((i + 1) + ";" + array.get(i));
+        }
+    }
+
+    private static void commaSeperatedDoctor()
+    {
+        ArrayList<Integer> distinct = new ArrayList<>();
+        ArrayList<String> array = new ArrayList<>();
+        //
+        for (int i = 0; i < 30; i++)
+        {
+            int alanNo = Utils.getRandomInt(1, 42);
+            int vatandasNo = -1;
+            do
+            {
+                vatandasNo = Utils.getRandomInt(650, 720);
+            } while (distinct.contains(vatandasNo));
+            distinct.add(vatandasNo);
+            //
+            array.add(String.format("%d;%d", vatandasNo, alanNo));
+        }
+        shuffle(array);
+        for (int i = 0; i < 30; i++)
+        {
+            System.out.println((i + 1) + ";" + array.get(i));
+        }
+    }
+
 }
