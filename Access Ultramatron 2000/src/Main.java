@@ -1,9 +1,7 @@
 import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import javax.jws.Oneway;
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,11 +15,183 @@ public class Main
 
     public static void main(String[] args) throws SQLException, FileNotFoundException
     {
-
         //commaSeperatedWorker();
         //commaSeperatedEczaci();
         //commaSeperatedDoctor();
         //ilacFiyat();
+        //commaSeperatedRecete();
+        //commaSeperatedReceteDetail();
+        //otherFiyat();
+        //satis();
+        //satisDetay();
+        stokDoldur();
+    }
+
+    private static void stokDoldur()
+    {
+        ArrayList<String> liste = new ArrayList<>();
+        for (int i = 0; i < 10; i++)
+        {
+            ArrayList<Integer> selectedProduct = new ArrayList<>();
+            for (int j = 0; j < Utils.getRandomInt(1900, 2100); j++)
+            {
+                int productNo = 0;
+                do
+                {
+                    productNo = Utils.getRandomInt(1, 6848);
+                } while (selectedProduct.contains(productNo));
+                selectedProduct.add(productNo);
+                int stok = Utils.getRandomInt(50, 101);
+                String randomDate = String.format("20%02d-%02d-%02d 0:0:0", Utils.getRandomInt(21, 25),
+                        Utils.getRandomInt(1, 13), Utils.getRandomInt(1, 28));
+                liste.add(String.format("%d;%d;%d;%s", productNo, i + 1, stok, randomDate));
+            }
+        }
+        for (int i = 0; i < liste.size(); i++)
+        {
+            liste.set(i, (i + 1) + ";" + liste.get(i));
+        }
+        writeToFile("stok", liste);
+
+    }
+
+    private static void satisDetay()
+    {
+        ArrayList<String> detay = new ArrayList<>();
+        for (int i = 0; i < 2560; i++)
+        {
+            double probability = Utils.getRandom(1);
+            int iter = 0;
+            if (probability <= 0.8)
+            {
+                iter = Utils.getRandomInt(1, 5);
+            } else if (probability > 0.8 && probability <= 0.95)
+            {
+                iter = Utils.getRandomInt(5, 10);
+            } else
+            {
+                iter = Utils.getRandomInt(10, 15);
+            }
+            //
+            for (int j = 0; j < iter; j++)
+            {
+                int qua = 1;
+                if (Utils.getRandom(1) < 0.05)
+                {
+                    qua = Utils.getRandomInt(2, 5);
+                }
+                int product = Utils.getRandomInt(1, 6848);
+                detay.add(String.format("%d;%d;%d;%d", (i + 1), (j + 1), product, qua));
+            }
+        }
+        for (int i = 0; i < detay.size(); i++)
+        {
+            detay.set(i, (i + 1) + ";" + detay.get(i));
+        }
+        writeToFile("satisDetay", detay);
+    }
+
+    private static void satis()
+    {
+        ArrayList<String> satislar = new ArrayList<>();
+        for (int i = 0; i < 2560; i++)
+        {
+            //1265 reteçe
+            int human = Utils.getRandomInt(1, 751); // 1 ile 750 arası bir insan yani vergi mükkelefi
+            String randomDate = String.format("20%02d-%02d-%02d %d:%02d:%02d", Utils.getRandomInt(12, 20),
+                    Utils.getRandomInt(1, 13), Utils.getRandomInt(1, 28), Utils.getRandomInt(9, 17), Utils.getRandomInt(0, 60), Utils.getRandomInt(0, 60));
+            int eczaci = Utils.getRandomInt(1, 51); // 1 ile 30 arası bir doctor
+            double probabilty = Utils.getRandom(1);
+            satislar.add(String.format("%d;%d;%d;%s", (i + 1), human, eczaci, randomDate));
+        }
+        writeToFile("satis", satislar);
+    }
+
+    private static void otherFiyat() throws FileNotFoundException
+    {
+        ArrayList<String> product = loadDataFromTxt("other.txt");
+        for (int i = 0; i < product.size(); i++)
+        {
+            double rand = Utils.getRandom(1);
+            int price = 0;
+            int dec = Utils.getRandomInt(0, 100);
+            if (rand <= 0.05)
+            {
+                // high price
+                price = Utils.getRandomInt(75, 250);
+            } else if (rand > 0.05 && rand <= 0.15)
+            {
+                // mid price
+                price = Utils.getRandomInt(25, 75);
+            } else
+            {
+                //cheap
+                price = Utils.getRandomInt(5, 25);
+            }
+            product.set(i, product.get(i) + String.format(";%d,%02d", price, dec));
+        }
+        for (String str : product)
+        {
+            System.out.println(str);
+        }
+        //writeToFile("others",product);
+    }
+
+    private static void commaSeperatedReceteDetail()
+    {
+        ArrayList<String> detay = new ArrayList<>();
+        for (int i = 0; i < 1265; i++)
+        {
+            double probability = Utils.getRandom(1);
+            int iter = 0;
+            if (probability <= 0.8)
+            {
+                iter = Utils.getRandomInt(1, 4); //1,2,3
+            } else if (probability > 0.8 && probability <= 0.95)
+            {
+                iter = Utils.getRandomInt(4, 8); //4,5,6,7
+            } else
+            {
+                iter = Utils.getRandomInt(8, 11); //8,9,10
+            }
+            //
+            for (int j = 0; j < iter; j++)
+            {
+                int qua = 1;
+                if (Utils.getRandom(1) < 0.05)
+                {
+                    qua = Utils.getRandomInt(2, 5);
+                }
+                int drug = Utils.getRandomInt(1, 6799);
+                detay.add(String.format("%d;%d;%d;%d", (i + 1), (j + 1), drug, qua));
+            }
+        }
+        for (int i = 0; i < detay.size(); i++)
+        {
+            detay.set(i, (i + 1) + ";" + detay.get(i));
+        }
+        writeToFile("detay", detay);
+    }
+
+    private static void commaSeperatedRecete()
+    {
+        ArrayList<String> receteler = new ArrayList<>();
+        for (int i = 0; i < 1265; i++)
+        {
+            //1265 reteçe
+            int human = Utils.getRandomInt(1, 751); // 1 ile 750 arası bir insan yani vergi mükkelefi
+            String randomDate = String.format("20%02d-%02d-%02d %d:%02d:%02d", Utils.getRandomInt(9, 20),
+                    Utils.getRandomInt(1, 13), Utils.getRandomInt(1, 28), Utils.getRandomInt(9, 17), Utils.getRandomInt(0, 60), Utils.getRandomInt(0, 60));
+            int doctor = Utils.getRandomInt(1, 31); // 1 ile 30 arası bir doctor
+            int receteType = 1;
+            double probabilty = Utils.getRandom(1);
+            if (probabilty <= 0.07)
+            {
+                receteType = Utils.getRandomInt(2, 6); // 2 ile 5 arası.
+            }
+            receteler.add(String.format("%d;%d;%d;%d;%s", (i + 1), human, doctor, receteType, randomDate));
+        }
+        writeToFile("receteler", receteler);
     }
 
     private static void writeToFile(String fileName, ArrayList<String> tableOfContext)
