@@ -1,0 +1,49 @@
+6799;1;Listerine Hassas Dişler için Ağız Bakım Ürünü;Johnson And Johnson Sıhhi Malzeme San. Ve Tic. Ltd. Şti.;61266890;21,69
+6800;1;Dentaid VITIS Orthodontic Ağız Çalkalama Suyu;Kozmoklinik Kozmetik Ve Medikal Ürünler Pazarlama Ve TİC. A.Ş.;8427426046;12,68
+6801;1;Bodivi Saf Soğuk Pres Organik Shea Yağı;Drogsan İlaçları Sanayi Ve Ticaret A.Ş.;124411011;12,40
+6802;1;Logona Yoğun Temizleme Sütü Organik Gül ve Kalpariane Özlü;İdeal Y. İlaç İtr. Kozmetik Tekstil Gıda San. Ve Paz. İç Dış TİC. A.Ş.;164855110;5,98
+6803;1;Ducray Melascreen Photo-Aging Global Serum ;Beliz Kozmetik Paz. Dış. Tic. Ltd. Şti.;2164696268;65,15
+6804;1;La Roche Posay Pigmentclar Serum;Repline Dış Ticaret Ltd. Şti.;24382424;14,96
+6805;1;Shiseido White Lucent Brightening Gel Cream Nemlendirici;AGA SAĞLIK HİZMETLERİ SAN. TİC. LTD. ŞTİ.;2165794000;5,84
+6806;1;Aptamil Sütlü Bisküvili Kaşık Mama;Gelişim Satış Ve Pazarlama Hizmetleri A.Ş.;66400201;5,02
+6807;1;Aptamil Sütlü Muzlu Kayısılı Kaşık Mama;Farmako Kozmetik San. Tic. A.Ş.;65270905;5,38
+6808;1;Milupa Organik Şeftali Elma Püresi;BİOSAFİR İLAÇ SAN. İTH. İHR. Ve TİC. A.Ş.;22907075;10,13
+6809;1;Milupa Papatya Çayı;Biomarket Organik Ürünleri San. Ve Tic. Ltd. Şti.;8502110249;15,64
+6810;1;Lierac Phytolastil Solute;Farmako Kozmetik San. Tic. A.Ş.;165540584;23,51
+6811;1;Bade Natural Saf Hindistan Cevizi Yağı;Rodonit Sağlık Ürünleri Ve Kozmetik Pazarlama San. Ve TİC. LTD. ŞTİ.;125701790;23,57
+6812;1;99 Bebek Yağı ;İLAÇ SAĞLIK Ve ECZACILIK ÜRÜNLERİ SAN. TİC. LTD. ŞTİ.;2442216317;6,63
+6813;1;Bebe Nature Baby Oil ;Evyap Sabun,Yağ,Gliserin San. Ve Tic. A.Ş.;2442216317;19,41
+6814;1;Gliss Million Gloss Şampuan;Pierre Fabre Dermokozmetik LTD.ŞTİ.;63474008;19,23
+6815;1;Gliss Beauty Milk Zayıf ve Güçsüz Saçlar İçin Sıvı Saç Kremi;Bambino Sağlık Gereçleri San. Ve Tic. A.Ş.;63718204;19,88
+6816;1;Bionnex Organica Saç Dökülmesine Karşı Bakım Şampuanı ;Bebak Kozmetik Sanayi Ve Dış. Tic. Ltd. Şti.;323283454;13,30
+6817;1;Klorane Manolya Ekstreli Işıltı Veren Saç Bakım Seti;Biota Bitkisel İla. Ve Kozmetik Laboratuarları A.Ş.;128532931;15,06
+6818;1;Pupa Pupart S Beauty Kits;Kozmoklinik Kozmetik Ve Medikal Ürünler Paz. Tic. A.Ş;65261000;8,58
+6819;1;Lancome Matt Shaker 189;Biota Bitkisel İlaç Ve Kozmetik Lab. A.Ş.;162911611;8,56
+6820;1;Ducray Anacaps Reactiv 30 Kapsül;Kozmoklinik Kozmetik Ve Medikal Ürünler Paz. Tic. A.Ş;124402445;21,02
+6821;1;Ducray Anacaps Progressiv 30 Kapsül;Kozmoklinik Kozmetik Ve Medikal Ürünler Paz. Tic. A.Ş;3123977915;15,94
+6822;1;Bio Oil Cilt Bakım Yağı 60 ml;Loreal Türkiye Kozmetik San Ve Tic. A.Ş.;3122780535;45,30
+6823;1;Avene Reflexe Solaire Güneş Kremi SPF 50;Deniz Kozmetik Üret. San. Tic. Ltd. Şti.;3124794490;23,54
+6824;1;Avene Fluide Mineral Güneş Koruyucu Renkli Krem Spf50;Artsana Turkey Bebek Ve Sağlık Ürünleri A.Ş;2123382150;11,92
+6825;1;Oral B Satin Tape Ferahlık ve Temizlik Hissi Veren Diş İpi;PGS Bio Kimya Medikal Koz. İtriyar Ve Paz. San. Tic. A.Ş.;8002117373;22,55
+6826;1;Eglydium Clinic Florürlü Diş İpi 35m;Nivea Beiersdorf Turkey Kozmetik San. Ve Tic. A.Ş.;122780700;23,43
+6827;1;Babe Saç Dökülmesine Karşı Şampuan ;EKOBİO LABORATUVAR Ve GIDA SAN. TİC. LTD. ŞTİ.;164254422;24,96
+6828;1;Eeose Kuru-Normal Saçlar İçin Saç Dökülmesine Karşı Şampuan;EİP Eczacıbaşı İlaç Pazarlama A.Ş.;26547194;11,47
+6829;1;Orzax Ocean Plus 50 Kapsül;Kozmoklinik Kozmetik Ve Medikal Ürünler Pazarlama Ve TİC. A.Ş.;66881676;12,93
+6830;1;Bioxcin Forte 300 ml Şampuan;Omega Pharma Kişisel Bakım Ürünleri San. Ve Tic Ltd. Şti.;64254422;20,83
+6831;1;Dermo Clean Alopecia Saç Dökülmesine Karşı Sprey;Este Kozmetik İlaç Ve Özel Sağ. Hiz. A.Ş.;24721170;7,44
+6832;1;Vichy Dercos Anti Dandruff Kepek Karşıtı Şampuan 390 ml;Consentis İlaç San. Ltd. Şti.;24721170;10,19
+6833;1;Vichy Mineral 89 Mineralizing Water;Kopaş Kozmetik Pazarlama Ve Sanayi A.Ş.;65794000;15,17
+6834;1;Mustela Stelatopia Temizleme Mendili;Vitatap Sağlık Ve Gıda Ürünleri San. Ve Tic. Ltd. Şti.;22190128;6,86
+6835;1;Trukid Trubaby Bebekler İçin Hassas Cilt Bakım Kremi;Johnson And Johnson;164855110;13,26
+6836;1;Eco by Naty Bebek Bezi Maxi Plus;OTC İstanbul İlaç Paz. Ve Ecza Deposu Med. İtr. İhr. LTD. ŞTİ.;24382424;21,77
+6837;1;Dalin Bebek Bakım Örtüsü;NURI Cosmetic;163397039;7,22
+6838;1;Medisana Bebek Doğal Oyuncak Temizleyici;Bio Bosphorus İthalat Ve İhracat Danışmanlık;64254422;13,67
+6839;1;Tommee Tippee Night Time Emzik;Gerçek Kozmetik Turizm San. Ve Tic. Ltd. Şti.;124382424;6,94
+6840;1;Nuk Baby Rose Blue 0- 6 Ay Slikon Emzik;Kozmoklinik Kozmetik Ve Medikal Ürünler Paz. Tic. A.Ş;122907075;68,88
+6841;1;VeNatura Çinko Takviye Edici Gıda;Ogig Sağlık Ürünleri Ve Hizmetleri San. TİC. Ltd. Şti.;64254422;23,34
+6842;1;Easy Fishoil Omega 3 Çiğnebilir Jel Form;Pierre Fabre Dermokozmetik LTD.ŞTİ.;66367400;23,13
+6843;1;Sensodyne Çok Yönlü Koruma Diş Fırçası;Lansinoh Laboratories;64855110;21,19
+6844;1;Curaprox CS 3960 Super Soft Diş Fırçası;Doğan Ezcane Ve Hastane Lev. PAZ. TİC. SAN. LTD.ŞTİ.;22117400;23,97
+6845;1;Bioderma Sensibio AR BB Cream Spf30;Reckitt Benckiser Tem. Mal. San. Ve Tic. A.Ş.;26547194;8,41
+6846;1;Avene Hydrance Perfecteur Legere;Bayfarma İlaç San. Ve TİC. A.Ş.;24387790;11,30
+6847;1;Filorga BB - Perfect Anti Aging Beauty Balm;ELİLE İLAÇ KOZMETİK SAĞLIK MEDİKAL PAZ. İTH. İHR. SAN. Ve TİC. LTD. ŞTİ;63042828;9,76
